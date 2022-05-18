@@ -148,7 +148,7 @@ points = PoolVector2Array( 0, 23, 64, 23, 64, 42, 42, 42, 42, 64, 23, 64, 23, 42
 0/z_index = 0
 
 [sub_resource type="CircleShape2D" id=16]
-radius = 20.0
+radius = 25.0
 
 [node name="Node2D" type="Node2D"]
 
