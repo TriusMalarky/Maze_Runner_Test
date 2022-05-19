@@ -22,12 +22,13 @@ func get_input():
 		fire(self.get_angle_to(get_global_mouse_position()))
 	velocity = velocity.normalized() * speed
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 	
 
-func fire(angle):
+func fire(_angle):
   var bullet = load("res://Bullet.tscn").instance()
-  bullet.position = self.position
+  var barrel = $Barrel
+  bullet.position = barrel.position
   get_parent().add_child(bullet)

@@ -180,4 +180,8 @@ texture = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 material = SubResource( 17 )
+position = Vector2( 35, 1 )
 current = true
+
+[node name="Barrel" type="Node2D" parent="Player"]
+position = Vector2( 35, 1 )
