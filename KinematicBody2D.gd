@@ -30,5 +30,5 @@ func _physics_process(_delta):
 func fire(_angle):
   var bullet = load("res://Bullet.tscn").instance()
   var barrel = $Barrel
-  bullet.position = barrel.position
+  bullet.position = barrel.get_global_position()
   get_parent().add_child(bullet)
