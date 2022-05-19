@@ -18,14 +18,16 @@ func get_input():
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1
 	if Input.is_action_just_pressed("shoot"):
-		shoot()
+		fire(Vector2(self.velocity.x, self.velocity.y))
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 	
-func shoot():
-	var b = Bullet.instance()
-	owner.add_child(b)
-	b.transform = $Muzzle.global_transform
+
+func fire(angle):
+  #var direction = Vector2(1.0,0.0).rotated(angle).normalized()
+  var bullet = load("res://Bullet.tscn").instance()
+  bullet.direction = angle
+  get_parent().add_child(bullet)
