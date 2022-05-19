@@ -18,7 +18,8 @@ func get_input():
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1
 	if Input.is_action_just_pressed("shoot"):
-		fire(Vector2(self.velocity.x, self.velocity.y))
+		#fire(Vector2(self.velocity.x, self.velocity.y))
+		fire(self.get_angle_to(get_global_mouse_position()))
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
@@ -27,8 +28,6 @@ func _physics_process(delta):
 	
 
 func fire(angle):
-  #var direction = Vector2(1.0,0.0).rotated(angle).normalized()
   var bullet = load("res://Bullet.tscn").instance()
-  bullet.direction = angle
   bullet.position = self.position
   get_parent().add_child(bullet)
