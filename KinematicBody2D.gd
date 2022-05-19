@@ -30,4 +30,5 @@ func fire(angle):
   #var direction = Vector2(1.0,0.0).rotated(angle).normalized()
   var bullet = load("res://Bullet.tscn").instance()
   bullet.direction = angle
+  bullet.position = self.position
   get_parent().add_child(bullet)
